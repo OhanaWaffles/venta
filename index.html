@@ -17,6 +17,9 @@
         --primary-color: #fce38a;
         --secondary-color: #e0c070;
         --accent-color: #4caf50;
+        --accent-color2: #4166ce;
+        --accent-color3: #8835b1;
+        --accent-color4: #c0309a;
         --text-dark: #222;
         --text-light: #444;
         --spacing-xs: 8px;
@@ -296,26 +299,67 @@
       }
 
       .cta-button {
-        position: fixed;
-        bottom: var(--spacing-md);
-        right: var(--spacing-md);
-        background: var(--accent-color);
-        color: white;
-        padding: 12px 20px;
-        border-radius: 50px;
-        text-decoration: none;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        animation: pulse 2s infinite;
-      }
+    position: fixed;
+    right: var(--spacing-md);
+    background: var(--accent-color);
+    color: white;
+    padding: 12px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    animation: pulse 2s infinite;
+}
 
-      .cta-button img {
-        width: 24px;
-        height: 24px;
-      }
+.cta-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.cta-tiktok {
+    bottom: calc(var(--spacing-md) + 180px); /* Posición más alta */
+}
+
+.cta-facebook {
+    bottom: calc(var(--spacing-md) + 120px);
+}
+
+.cta-instagram {
+    bottom: calc(var(--spacing-md) + 60px);
+}
+
+.cta-whatsapp {
+    bottom: var(--spacing-md); /* Posición más baja */
+}
+
+@media (max-width: 768px) {
+    .cta-button {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+    }
+    .cta-button img {
+        width: 20px;
+        height: 20px;
+    }
+    .cta-tiktok {
+        bottom: calc(var(--spacing-md) + 150px);
+    }
+    .cta-facebook {
+        bottom: calc(var(--spacing-md) + 100px);
+    }
+    .cta-instagram {
+        bottom: calc(var(--spacing-md) + 50px);
+    }
+    .cta-whatsapp {
+        bottom: var(--spacing-md);
+    }
+}
 
       @keyframes pulse {
         0% {
@@ -517,57 +561,8 @@
         >
       </nav>
     </header>
-
-    <section id="waffle-mes">
-      <h2>Waffle del Mes</h2>
-      <div class="productos">
-        <div class="producto">
-          <img
-            src="images/fon.jpg"
-            alt="Waffle Stitch Aloha con piña y coco"
-            loading="lazy"
-          />
-          <h3>Waffle Stitch Aloha</h3>
-          <p>Con platano, miel y crema batida. ¡Un toque tropical!</p>
-          <p><strong>Precio: $60 MXN</strong></p>
-          <a
-            href="https://wa.me/5521763428?text=Quiero%20pedir%20un%20Waffle%20Stitch%20Aloha"
-            class="boton-pedido"
-            >Pedir Ahora</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <section id="promociones">
-      <h2>Ofertas Especiales</h2>
-      <div id="temporizador">
-        Oferta válida hasta: <span id="countdown"></span>
-      </div>
-      <div class="productos">
-        <div class="producto">
-          <h3>Combo Snoopy</h3>
-          <p>Waffle Clásico + Bebida a elección por $70 MXN.</p>
-          <a
-            href="https://wa.me/5521763428?text=Quiero%20el%20Combo%20Snoopy"
-            class="boton-pedido"
-            >Pedir Ahora</a
-          >
-        </div>
-        <div class="producto">
-          <h3>Combo Stitch</h3>
-          <p>Waffle con Nutella + Café o Jugo por $80 MXN.</p>
-          <a
-            href="https://wa.me/5521763428?text=Quiero%20el%20Combo%20Stitch"
-            class="boton-pedido"
-            >Pedir Ahora</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <section id="productos">
-      <h2>Nuestros Waffles</h2>
+ <section id="productos">
+      <h2>Especialidades Ohana</h2>
       <div class="productos">
         <div class="producto">
           <img
@@ -711,6 +706,27 @@
       </div>
     </section>
 
+    <section id="waffle-mes">
+      <h2>Waffle del Mes</h2>
+      <div class="productos">
+        <div class="producto">
+          <img
+            src="images/fon.jpg"
+            alt="Waffle Stitch Aloha con piña y coco"
+            loading="lazy"
+          />
+          <h3>Waffle Stitch Aloha</h3>
+          <p>Con platano, miel y crema batida. ¡Un toque tropical!</p>
+          <p><strong>Precio: $60 MXN</strong></p>
+          <a
+            href="https://wa.me/5521763428?text=Quiero%20pedir%20un%20Waffle%20Stitch%20Aloha"
+            class="boton-pedido"
+            >Pedir Ahora</a
+          >
+        </div>
+      </div>
+    </section>
+
     <section id="galeria">
       <h2>Galería</h2>
       <div class="swiper-container">
@@ -768,6 +784,33 @@
         <div class="swiper-pagination"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <section id="promociones">
+      <h2>Ofertas Especiales</h2>
+      <div id="temporizador">
+        Oferta válida hasta: <span id="countdown"></span>
+      </div>
+      <div class="productos">
+        <div class="producto">
+          <h3>Combo Snoopy</h3>
+          <p>Waffle Clásico + Bebida a elección por $70 MXN.</p>
+          <a
+            href="https://wa.me/5521763428?text=Quiero%20el%20Combo%20Snoopy"
+            class="boton-pedido"
+            >Pedir Ahora</a
+          >
+        </div>
+        <div class="producto">
+          <h3>Combo Stitch</h3>
+          <p>Waffle con Nutella + Café o Jugo por $80 MXN.</p>
+          <a
+            href="https://wa.me/5521763428?text=Quiero%20el%20Combo%20Stitch"
+            class="boton-pedido"
+            >Pedir Ahora</a
+          >
+        </div>
       </div>
     </section>
 
@@ -890,10 +933,31 @@
       />
     </a>
 
+  
+
+<a href="https://tiktok.com/@ohana.waffles" target="_blank" class="cta-button cta-tiktok">
+    <img src="https://cdn-icons-png.flaticon.com/128/3046/3046121.png" alt="TikTok" />
+</a>
+<a href="https://www.facebook.com/people/Ohana-Waffles/pfbid02xJDy9ZTwmPfXAyLPGTzmihNNUupsozfNZ4a1Z5DMTdLgDR6JRf4h8Buo7n846kchl/" target="_blank" class="cta-button cta-facebook">
+    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Facebook" />
+</a>
+<a href="https://instagram.com/ohanawaffles?igsh=MXB10XJrajFha3Zodg==" target="_blank" class="cta-button cta-instagram">
+    <img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png" alt="Instagram" />
+</a>
+<a href="https://wa.me/5521763428?text=Quiero%20hacer%20un%20pedido" class="cta-button cta-whatsapp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+</a>
+
+
+
+
+
+
+
     <a href="#top" class="scroll-top"> ↑­­­­­­­ </a>
 
     <footer>
-      <p>Maria Fernanda Martinez Acevedo | Vanesa Osnalla Martinez</p>
+      <p>Maria Fernanda Martinez Acevedo | Vanesa Osnaya Martinez</p>
       <div class="redes">
         <a
           href="https://www.facebook.com/profile.php?id=61578154940131&sk=friends"
